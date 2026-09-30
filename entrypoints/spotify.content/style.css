@@ -1,0 +1,68 @@
+#lr-pill {
+  position: fixed;
+  right: 24px;
+  bottom: 104px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(18, 16, 28, 0.82);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  font: 600 13px/1 'Circular', 'Helvetica Neue', system-ui, sans-serif;
+}
+
+#lr-pill button {
+  appearance: none;
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: transparent;
+  color: #cfc8e6;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+#lr-pill button:hover:not(:disabled) { color: #fff; }
+#lr-pill button[aria-pressed='true'] { background: #efe9ff; color: #1d1633; }
+#lr-pill button:disabled { opacity: 0.45; cursor: progress; }
+#lr-pill button:focus-visible { outline: 2px solid #b9a4ff; outline-offset: 2px; }
+
+#lr-pill .lr-status { padding: 0 10px 0 6px; color: #a79fc2; font-weight: 400; }
+#lr-pill .lr-status:empty { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  #lr-pill button { transition: none; }
+}
+/* ---------- Panel lirik LRCLIB ---------- */
+#lr-panel {
+  position: fixed;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #2a2145 0%, #15111f 100%);
+  color: #efe9ff;
+  font: 700 28px/1.35 'Circular', 'Helvetica Neue', system-ui, sans-serif;
+}
+#lr-panel .lr-scroll { flex: 1; overflow-y: auto; padding: 40px 48px 30vh; }
+#lr-panel .lr-lines { list-style: none; margin: 0; padding: 0; }
+#lr-panel .lr-lines li { margin: 0 0 14px; transition: color 0.2s; }
+#lr-panel[data-synced='true'] .lr-lines li { color: rgba(239, 233, 255, 0.45); }
+#lr-panel[data-synced='true'] .lr-lines li.lr-past { color: rgba(239, 233, 255, 0.7); }
+#lr-panel[data-synced='true'] .lr-lines li.lr-active { color: #fff; }
+#lr-panel .lr-msg { margin: 0; font-size: 20px; font-weight: 600; color: #a79fc2; }
+#lr-panel .lr-msg:empty { display: none; }
+#lr-panel .lr-credit {
+  margin: 0;
+  padding: 10px 48px 14px;
+  font: 400 12px/1 system-ui, sans-serif;
+  color: #8d84ab;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #lr-panel .lr-lines li { transition: none; }
+}

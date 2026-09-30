@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lirik Romaji</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Lirik Romaji</h1>
+      <p class="sub">Tampilan lirik di Spotify Web</p>
+
+      <div class="switch" role="radiogroup" aria-label="Mode lirik">
+        <button type="button" role="radio" data-mode="original" aria-checked="false">
+          <span class="big">가 あ 中</span>
+          <span>Asli</span>
+        </button>
+        <button type="button" role="radio" data-mode="romaji" aria-checked="false">
+          <span class="big">ga a zhong</span>
+          <span>Romaji</span>
+        </button>
+      </div>
+
+      <p class="hint">Pintasan: <kbd>Alt</kbd> + <kbd>R</kbd> di tab Spotify</p>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
